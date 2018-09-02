@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Rijks Museum</string>
+    <string name="loading">Loading…</string>
+    <string name="network_error">Error.</string>
+    <string name="network_retry">RTO.</string>
 </resources>
