@@ -28,6 +28,7 @@ public class LoginPresenter extends BasePresenter<LoginView> {
                 if (user.getPassword().equals(password)) {
                     view().onError("Login Success!");
                     PrefManager.initPreferences().setLogin(true);
+                    PrefManager.initPreferences().setUser(new UserModel(username,password));
                     view().goMain();
                 } else
                     view().onError("Authentication Failed!");

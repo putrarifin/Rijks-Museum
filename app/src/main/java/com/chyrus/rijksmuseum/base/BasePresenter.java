@@ -2,6 +2,7 @@ package com.chyrus.rijksmuseum.base;
 
 import com.chyrus.rijksmuseum.R;
 import com.chyrus.rijksmuseum.network.Network;
+import com.chyrus.rijksmuseum.network.OnRequestTimeOut;
 import com.chyrus.rijksmuseum.network.Routes;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -18,7 +19,7 @@ public class BasePresenter<V extends BaseView> {
 
     protected void attachView(V view) {
         this.view = view;
-        service = Network.builder().create(Routes.class);
+        service = Network.builder(() -> view.onError("RTO")).create(Routes.class);
         realm = Realm.getDefaultInstance();
     }
 

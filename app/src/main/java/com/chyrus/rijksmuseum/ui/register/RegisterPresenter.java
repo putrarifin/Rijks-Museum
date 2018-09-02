@@ -35,6 +35,7 @@ public class RegisterPresenter extends BasePresenter<RegisterView> {
                 UserModel newUser = new UserModel(username,password);
                 realm.insertOrUpdate(newUser);
                 PrefManager.initPreferences().setLogin(true);
+                PrefManager.initPreferences().setUser(new UserModel(username,password));
                 view().goMain();
             }
         });

@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.chyrus.rijksmuseum.R;
-import com.chyrus.rijksmuseum.BR;
 import com.chyrus.rijksmuseum.base.BaseActivity;
 import com.chyrus.rijksmuseum.databinding.ActivityMainBinding;
 import com.chyrus.rijksmuseum.ui.rijks.RijksFragment;

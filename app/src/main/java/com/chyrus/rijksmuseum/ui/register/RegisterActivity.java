@@ -1,7 +1,6 @@
 package com.chyrus.rijksmuseum.ui.register;
 
 import android.databinding.DataBindingUtil;
-import android.widget.Toast;
 
 import com.chyrus.rijksmuseum.R;
 import com.chyrus.rijksmuseum.base.BaseActivity;

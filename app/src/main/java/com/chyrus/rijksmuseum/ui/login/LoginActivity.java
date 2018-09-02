@@ -2,7 +2,6 @@ package com.chyrus.rijksmuseum.ui.login;
 
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
-import android.widget.Toast;
 
 import com.chyrus.rijksmuseum.R;
 import com.chyrus.rijksmuseum.base.BaseActivity;
@@ -10,7 +9,6 @@ import com.chyrus.rijksmuseum.databinding.ActivityLoginBinding;
 import com.chyrus.rijksmuseum.ui.main.MainActivity;
 import com.chyrus.rijksmuseum.ui.register.RegisterActivity;
 import com.chyrus.rijksmuseum.utils.ActivityUtils;
-import com.chyrus.rijksmuseum.utils.PrefManager;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginPresenter> implements LoginView {
 
