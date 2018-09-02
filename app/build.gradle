@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 27
@@ -13,7 +14,7 @@ android {
         dataBinding.enabled = true
 
         //generalString
-        buildConfigField("String", "MAIN_URL", "\"https://www.rijksmuseum.nl/implementation/\"")
+        buildConfigField("String", "MAIN_URL", "\"https://www.rijksmuseum.nl/api/\"")
         buildConfigField("String", "KEY", "\"byke9Iln\"")
     }
     compileOptions {
@@ -34,6 +35,7 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     //android dataBinding
+    implementation 'com.android.support:support-v4:27.1.1'
     annotationProcessor 'com.android.databinding:compiler:3.1.4'
 
     //glide

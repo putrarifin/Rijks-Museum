@@ -6,6 +6,7 @@ import com.chyrus.rijksmuseum.network.Routes;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.realm.Realm;
 import retrofit2.HttpException;
 
 public class BasePresenter<V extends BaseView> {
@@ -13,10 +14,12 @@ public class BasePresenter<V extends BaseView> {
     private V view;
     private Routes service;
     private CompositeDisposable composite;
+    private Realm realm;
 
     protected void attachView(V view) {
         this.view = view;
         service = Network.builder().create(Routes.class);
+        realm = Realm.getDefaultInstance();
     }
 
     public V view() {
@@ -27,12 +30,8 @@ public class BasePresenter<V extends BaseView> {
         return service;
     }
 
-    private String getToken() {
-        return ""; //@TODO("local storage")
-    }
-
-    private void resetToken() {
-        //@TODO("reset token")
+    public Realm realm() {
+        return realm;
     }
 
     protected void subscribe(Disposable disposable) {

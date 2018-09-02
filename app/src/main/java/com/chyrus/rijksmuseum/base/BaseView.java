@@ -1,6 +1,7 @@
 package com.chyrus.rijksmuseum.base;
 
 import android.support.annotation.StringRes;
+import android.support.v7.widget.Toolbar;
 
 public interface BaseView {
 
@@ -17,5 +18,7 @@ public interface BaseView {
     void hideKeyboard();
 
     void logOut();
+
+    void initToolbar(String title, boolean backhome, Toolbar toolbar);
 
 }
