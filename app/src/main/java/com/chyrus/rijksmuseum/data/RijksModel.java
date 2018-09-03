@@ -1,6 +1,8 @@
 package com.chyrus.rijksmuseum.data;
 
-public class RijksModel {
+import java.io.Serializable;
+
+public class RijksModel implements Serializable{
 
     private String title;
     private String desc;

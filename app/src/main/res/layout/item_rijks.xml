@@ -2,20 +2,20 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
-
         <variable
             name="item"
             type="com.chyrus.rijksmuseum.data.RijksModel" />
     </data>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:clickable="true"
-        android:onClick="onRijksClicked"
-        android:foreground="?android:selectableItemBackground"
-        android:orientation="horizontal">
+        android:onClick="onPortClicked"
+        android:tag="@{item}"
+        android:foreground="?android:selectableItemBackground">
 
         <ImageView
             android:layout_width="80dp"

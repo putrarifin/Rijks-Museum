@@ -1,5 +1,6 @@
 package com.chyrus.rijksmuseum.ui.rijks;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
@@ -10,6 +11,7 @@ import com.chyrus.rijksmuseum.BR;
 import com.chyrus.rijksmuseum.base.BaseFragment;
 import com.chyrus.rijksmuseum.data.RijksModel;
 import com.chyrus.rijksmuseum.databinding.FragmentRijksBinding;
+import com.chyrus.rijksmuseum.ui.detail.DetailActivity;
 import com.github.nitrico.lastadapter.LastAdapter;
 
 import java.util.List;
@@ -31,14 +33,16 @@ public class RijksFragment extends BaseFragment<FragmentRijksBinding, RijksPrese
 
     @Override
     protected void onCreated() {
-        view.btLogout.setOnClickListener(view1 -> logOut());
-        view.recyclerView1.setLayoutManager(new LinearLayoutManager(getActivity()));
+        view.rvList.setLayoutManager(new LinearLayoutManager(getActivity()));
         presenter.showRijks();
     }
 
-    public void onRijksClicked(View view) {
+    public void onPortClicked(View view) {
         RijksModel data = (RijksModel) view.getTag();
-        Toast.makeText(getActivity(), "item:" + data.getTitle(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "item:" + data.getTitle(), Toast.LENGTH_SHORT).show();
+
+        Intent detail = new Intent(getActivity(), DetailActivity.class);
+        detail.putExtra("data", data);
     }
 
     @Override
@@ -50,6 +54,6 @@ public class RijksFragment extends BaseFragment<FragmentRijksBinding, RijksPrese
     public void onSuccess(List<RijksModel> res) {
         new LastAdapter(res, BR.item)
                 .map(RijksModel.class, R.layout.item_rijks)
-                .into(view.recyclerView1);
+                .into(view.rvList);
     }
 }

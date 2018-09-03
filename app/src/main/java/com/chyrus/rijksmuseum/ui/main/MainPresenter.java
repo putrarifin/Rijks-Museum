@@ -8,17 +8,4 @@ public class MainPresenter extends BasePresenter<MainView> {
         super.attachView(view);
     }
 
-    void getRijks() {
-        view().showLoading();
-//        subscribe(service().getHome()
-//                .compose(new MainScheduler<>())
-//                .subscribe(res -> {
-//                    view().hideLoading();
-//                    view().onSuccess(res);
-//                }, err -> {
-//                    view().hideLoading();
-//                    handleError(err);
-//                })
-//        );
-    }
 }

@@ -1,5 +1,7 @@
 package com.chyrus.rijksmuseum.network;
 
+import android.util.Log;
+
 import com.chyrus.rijksmuseum.BuildConfig;
 import com.google.gson.GsonBuilder;
 
@@ -33,6 +35,8 @@ public class Network {
                         builder.addQueryParameter("format", "json");
                     }
                     url = builder.build();
+
+                    Log.d(TAG, "URL: " + url);
                     Request.Builder requestBuilder = original.newBuilder()
                             .url(url);
                     Request request = requestBuilder.build();

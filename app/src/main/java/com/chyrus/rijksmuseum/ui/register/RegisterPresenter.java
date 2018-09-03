@@ -13,6 +13,7 @@ public class RegisterPresenter extends BasePresenter<RegisterView> {
     }
 
     void register(String username, String password, CheckBox checkBox) {
+        view().hideKeyboard();
         if (username.trim().isEmpty()) {
             view().onError("Username should not be empty");
             return;
