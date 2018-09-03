@@ -1,5 +1,6 @@
 package com.chyrus.rijksmuseum.ui.main;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +18,9 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.chyrus.rijksmuseum.R;
 import com.chyrus.rijksmuseum.base.BaseActivity;
+import com.chyrus.rijksmuseum.data.RijksModel;
 import com.chyrus.rijksmuseum.databinding.ActivityMainBinding;
+import com.chyrus.rijksmuseum.ui.detail.DetailActivity;
 import com.chyrus.rijksmuseum.ui.profile.ProfileFragment;
 import com.chyrus.rijksmuseum.ui.rijks.RijksFragment;
 import com.chyrus.rijksmuseum.utils.PrefManager;
@@ -92,5 +96,14 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainPresente
         } else {
             doExitApp();
         }
+    }
+
+    public void onPortClicked(View view) {
+        RijksModel data = (RijksModel) view.getTag();
+//        Toast.makeText(getActivity(), "item:" + data.getTitle(), Toast.LENGTH_SHORT).show();
+
+        Intent detail = new Intent(this, DetailActivity.class);
+        detail.putExtra("data", data);
+        startActivity(detail);
     }
 }

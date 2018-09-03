@@ -43,6 +43,7 @@ public class RijksFragment extends BaseFragment<FragmentRijksBinding, RijksPrese
 
         Intent detail = new Intent(getActivity(), DetailActivity.class);
         detail.putExtra("data", data);
+        startActivity(detail);
     }
 
     @Override

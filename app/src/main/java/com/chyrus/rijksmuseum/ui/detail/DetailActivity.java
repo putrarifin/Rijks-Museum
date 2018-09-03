@@ -30,6 +30,6 @@ public class DetailActivity extends BaseActivity<ActivityDetailBinding, DetailPr
         if (data != null) {
             view.titleDetail.setText(Objects.requireNonNull(data).getTitle());
         }
-        Glide.with(this).load(R.drawable.photo).into(view.imgDetail);
+        Glide.with(this).load(data.getImg()).into(view.imgDetail);
     }
 }
