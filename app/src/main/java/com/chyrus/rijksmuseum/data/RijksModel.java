@@ -1,5 +1,10 @@
 package com.chyrus.rijksmuseum.data;
 
+import android.databinding.BindingAdapter;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+
 import java.io.Serializable;
 
 public class RijksModel implements Serializable{
@@ -30,5 +35,12 @@ public class RijksModel implements Serializable{
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    @BindingAdapter({"bind:imageUrl"})
+    public static void loadImage(ImageView view, String imageUrl) {
+        Glide.with(view.getContext())
+                .load(imageUrl)
+                .into(view);
     }
 }
